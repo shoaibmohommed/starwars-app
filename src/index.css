@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.planet-list-item{
+  display: flex;
+  flex-direction: row;
+  padding: 9px;
+  margin: 5px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.planet-list-item:hover{
+  background: #ededed;
+}
+.planet-list-item span:nth-child(1){
+  flex: 1;
+  text-align: left;
+}
+.planet-list-container{
+  max-height: 400px;
+  overflow: auto;
+  margin: 45px 10px 0px 10px;
+  border: 1.2px solid #e6e6e6;
+  border-radius: 3px;
+}
