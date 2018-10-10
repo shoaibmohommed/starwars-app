@@ -29,7 +29,7 @@ class Search extends React.Component {
 
   componentWillMount() {
     if (!this.props.username) {
-      //  this.context.router.history.push("/");
+      this.context.router.history.push("/");
     }
   }
   getData = (url, value = this.state.currentValue) => {
