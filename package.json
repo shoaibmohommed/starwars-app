@@ -2,6 +2,7 @@
   "name": "sample-react-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://shoaibmohommed.github.io/starwars-app/",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",

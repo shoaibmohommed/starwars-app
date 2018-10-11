@@ -6,8 +6,10 @@ import { withRouter } from 'react-router-dom'
 import { connect } from "react-redux";
 import Util from "../Util";
 import swal from 'sweetalert';
+
 const LukeSkywalker = 'Luke Skywalker';
 const MAX_SEARCH_LIMIT = 15;
+
 const PlanetList = ({ list, onPlanetDetailClick }) => {
   return list.map((data, key) => {
     return (
@@ -28,7 +30,7 @@ class Search extends React.Component {
   state = { currentValue: "", showLoader: false, showPopup: false, planetDetails: {}, requestCounter: 0 };
 
   componentWillMount() {
-    if (!this.props.username) {
+    if (!this.props.username && this.props.history) {
       this.props.history.push("/");
     }
   }
