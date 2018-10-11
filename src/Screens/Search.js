@@ -2,7 +2,7 @@ import React from "react";
 import { FormControl, Button, Modal } from "react-bootstrap";
 import { ScaleLoader } from "react-spinners";
 import { setPlanetList } from "../Redux/actions";
-import PropType from "prop-types";
+import { withRouter } from 'react-router-dom'
 import { connect } from "react-redux";
 import Util from "../Util";
 import swal from 'sweetalert';
@@ -29,7 +29,7 @@ class Search extends React.Component {
 
   componentWillMount() {
     if (!this.props.username) {
-      this.context.router.history.push("/");
+      this.props.history.push("/");
     }
   }
   getData = (url, value = this.state.currentValue) => {
@@ -147,9 +147,7 @@ class Search extends React.Component {
     );
   }
 }
-Search.contextTypes = {
-  router: PropType.object.isRequired
-};
+
 export default connect(store => {
   const { reducer } = store;
   const { planetsData, username } = reducer;
@@ -159,4 +157,4 @@ export default connect(store => {
     prevPage: planetsData.previous,
     username: username
   };
-})(Search);
+})(withRouter(Search));

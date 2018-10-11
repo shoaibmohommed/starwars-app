@@ -4,7 +4,7 @@ body {
   font-family: sans-serif;
 }
 
-.planet-list-item{
+.planet-list-item {
   display: flex;
   flex-direction: row;
   padding: 9px;
@@ -13,14 +13,17 @@ body {
   border-radius: 3px;
   cursor: pointer;
 }
-.planet-list-item:hover{
+
+.planet-list-item:hover {
   background: #ededed;
 }
-.planet-list-item span:nth-child(1){
+
+.planet-list-item span:nth-child(1) {
   flex: 1;
   text-align: left;
 }
-.planet-list-container{
+
+.planet-list-container {
   max-height: 400px;
   overflow: auto;
   margin: 45px 10px 0px 10px;

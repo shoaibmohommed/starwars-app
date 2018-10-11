@@ -15,7 +15,7 @@ const onLogout = (dispatch) => {
     window.location.reload();
 }
 const Routing = ({ username, dispatch }) => (
-    <Router >
+    <Router basename="/starwars-app" >
         <div>
             <Navbar>
                 <Navbar.Header>
@@ -33,7 +33,6 @@ const Routing = ({ username, dispatch }) => (
             </Navbar>;
             <Route exact path="/" component={Login} />
             <Route path="/search" component={Search} />
-
         </div>
     </Router>
 )

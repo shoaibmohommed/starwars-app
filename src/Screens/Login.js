@@ -1,9 +1,9 @@
 import React from 'react';
 import { FormGroup, HelpBlock, FormControl, Button } from 'react-bootstrap';
 import Util from '../Util';
+import { withRouter } from 'react-router-dom'
 import swal from 'sweetalert';
 import { ScaleLoader } from 'react-spinners';
-import PropType from 'prop-types';
 import { setUsername } from '../Redux/actions'
 import { connect } from 'react-redux';
 
@@ -48,7 +48,7 @@ class Login extends React.Component {
                 swal("Alert", "Username or password is incorrect");
             } else {
                 this.props.dispatch(setUsername(username));
-                this.context.router.history.push('/search');
+                this.props.history.push('/search');
                 return;
             }
             this.setState({ showLoader: false });
@@ -113,9 +113,7 @@ class Login extends React.Component {
         );
     }
 }
-Login.contextTypes = {
-    router: PropType.object.isRequired
-}
+
 const FieldGroup = ({ controlId, validationState, help, ...props }) => {
     return (
         <FormGroup controlId={controlId} validationState={validationState()}>
@@ -126,4 +124,4 @@ const FieldGroup = ({ controlId, validationState, help, ...props }) => {
 
 export default connect(store => {
     return {}
-})(Login);
+})(withRouter(Login));
