@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import { Navbar } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, HashRouter as Router } from 'react-router-dom';
 const onLogout = (dispatch) => {
     dispatch(setUsername(''));
     window.location.reload();
